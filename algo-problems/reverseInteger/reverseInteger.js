@@ -14,3 +14,4 @@ var reverseNum = function(num) {
 
 console.log(reverseNum(1234)) //4321
 console.log(reverseNum(0)) // 0
+console.log(reverseNum(-345678)) // 876543

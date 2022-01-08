@@ -15,6 +15,11 @@
  *
  * You should return `null` if the input is not a string. You can expect
  * all non-empty string inputs to be valid roman numerals.
+ *
+ * output = numerical sum value
+ * input is either a roman numeral or not a string
+ * constraints all positive values greater than 0
+ * edge cases non-string values
  */
 
 var DIGIT_VALUES = {
@@ -27,7 +32,33 @@ var DIGIT_VALUES = {
   M: 1000
 };
 
-var translateRomanNumeral = function(romanNumeral) {
+// var translateRomanNumeral = function(romanNumeral) {
 // TODO: Implement me!
+// };
 
+// Jan 6 2022
+  // return null if not a string
+  // split into an array
+  // iterate over the array
+    // add to sum
+    // if current element is greater than the previous
+      // subtract previous from current element before adding to sum
+  // return sum
+
+var translateRomanNumeral = function(romanNumeral) {
+  if(typeof romanNumeral !== 'string'){
+    return null;
+  }
+
+  var romArray = romanNumeral.split('');
+  var sum = 0;
+  var previous;
+  for(var letter in romArray){
+    if(previous && DIGIT_VALUES[previous] < DIGIT_VALUES[letter]) {
+      sum += (DIGIT_VALUES[letter] - 2*DIGIT_VALUES[previous])
+    }
+      previous = letter;
+      sum += DIGIT_VALUES[letter];
+  }
+  return sum;
 };
