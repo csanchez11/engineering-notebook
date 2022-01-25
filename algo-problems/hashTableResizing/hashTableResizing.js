@@ -19,7 +19,7 @@ var getIndexBelowMaxForKey = function(str, max) {
   }
   return hash % max;
 };
-
+console.log(getIndexBelowMaxForKey('bryan',6));
 var makeHashTable = function() {
   var result = {};
   var storage = [];
@@ -27,13 +27,14 @@ var makeHashTable = function() {
   var size = 0;
 
   result.insert = function(key, value) {
+    var bucket = [];
     //run the key thru the hashing function to get an index number
     var hashIndex = getIndexBelowMaxForKey(key, storageLimit)
     // if storage at index does not have a bucket
     if( !storage[hashIndex] ){
       // create an array bucket
       // push the key;value into that bucket
-      var bucket = [[key, value]];
+      bucket[0] = [key, value];
       //set storage array at hashIndex equal to bucket
       storage[hashIndex] = bucket;
     } else {
@@ -102,3 +103,10 @@ var makeHashTable = function() {
 
   return result;
 };
+
+
+// let ht = makeHashTable();
+// ht.insert('chris', 'sanchez');
+// ht.insert('bryan', 'martinez');
+// ht.insert('katy','kelley');
+// console.log(ht.retrieve('chris'));

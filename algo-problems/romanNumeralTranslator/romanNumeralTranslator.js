@@ -53,12 +53,20 @@ var translateRomanNumeral = function(romanNumeral) {
   var romArray = romanNumeral.split('');
   var sum = 0;
   var previous;
-  for(var letter in romArray){
+  var letter;
+  for(var i = 0; i < romArray.length; i++){
+    letter = romArray[i];
     if(previous && DIGIT_VALUES[previous] < DIGIT_VALUES[letter]) {
-      sum += (DIGIT_VALUES[letter] - 2*DIGIT_VALUES[previous])
-    }
-      previous = letter;
+      sum += DIGIT_VALUES[letter] - 2*DIGIT_VALUES[previous];
+    } else {
       sum += DIGIT_VALUES[letter];
+    }
+    previous = letter;
   }
   return sum;
 };
+
+console.log(translateRomanNumeral('LVIII')); // 58
+console.log(translateRomanNumeral('III')); // 3
+console.log(translateRomanNumeral('IX')); // 9
+console.log(translateRomanNumeral('MCMXCIV')); // 1994
