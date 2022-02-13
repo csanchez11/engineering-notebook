@@ -38,3 +38,20 @@ let addTwoNumbers = function(l1, l2) {
         next: addTwoNumbers(nextL1, nextL2)
     };
 };
+
+
+const finder = function (nums, target) {
+    let map = new Map();
+    for (let i = 0; i < nums.length; i++) {
+      let complement = target - nums[i]
+      if(map.get(complement)){
+          return 'Pair found (' + complement + ', ' + nums[i] + ')'
+  }
+      map.set(nums[i],complement)
+
+    }
+    return 'Pair not found'
+};
+
+
+console.log(finder([8, 7, 2, 5, 3, 1], 10))

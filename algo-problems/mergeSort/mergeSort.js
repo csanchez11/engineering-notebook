@@ -126,7 +126,8 @@ var merge = (first, second) => {
   return result.concat(first.slice(firstIndex)).concat(second.slice(secondIndex));
 
 }
-
+let arr = [3,7,34,9,0,1,65,3,6,11,2,6,8,-4];
+console.log(mergeSort(arr));
 
 // var mergeSort = function(array) {
 //   //stopping point if array has 1 element or less
