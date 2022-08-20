@@ -9,7 +9,8 @@
  */
 
 
-const prefixFinder = (words, prefixes) => {
+
+ const prefixFinder = (words, prefixes) => {
   let result = [];
   for(let j = 0; j < prefixes.length; j++) {
     let prefixArray = [];
@@ -31,8 +32,8 @@ const prefixFinder = (words, prefixes) => {
  * Returns word of prefixes found or null if none exist
  */
 const prefixHelper = (word, prefix) => {
-  let pre = prefix.toUppercase();
-  let wordUpper = word.toUppercase();
+  let pre = prefix.toUpperCase();
+  let wordUpper = word.toUpperCase();
   if (wordUpper.indexOf(pre) === 0){
     return word
   }
@@ -41,5 +42,6 @@ const prefixHelper = (word, prefix) => {
 
 
 let arr1 = ['Apple', 'Application', 'Banana', 'Boore', 'Book'];
-let prefix1 = ['App', 'Boo'];s
-console.log(prefixFinder(arr1, prefix1))
+let prefix1 = ['App', 'Boo'];
+
+console.log(prefixFinder(arr1, prefix1));
