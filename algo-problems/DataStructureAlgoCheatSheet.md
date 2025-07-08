@@ -4,7 +4,7 @@
 For Shortest path use Breadth First Search to move level by level
 For sparce graphs with fewer connections use Depth First Search, good for finding all possible paths
 
-## Graph Matrix
+### Graph Matrix
 A graph matrix, also known as an Adjacency Matrix will be a two-dimensional array with the "weights" represented in each node.
 Graphs can be directed or undirected, below is undirected if a node is connected to another, communication is bi-directional
 
@@ -17,7 +17,7 @@ const graphMatrix = [
 ]
 ```
 
-## Graph List
+### Graph List
 A Graph List is also known as an Adjacency List and looks like an Object with keys of each node and the value being an array of adjacent nodes.
 
 ``` JavaScript
@@ -89,3 +89,22 @@ function dfsRecursive(graph, startNode, visited = {}) {
 dfsRecursive(graph, 'A');
 ```
 
+## Linked List
+```JavaScript
+// Definition for singly-linked list.
+function ListNode(val, next) {
+    this.val = (val===undefined ? 0 : val)
+    this.next = (next===undefined ? null : next)
+}
+```
+
+### Remove Head
+head = head.next
+
+### Remove node from middle
+node(n-1) --> node(n) --> node(n+1)
+node(n-1).next    -->     node(n+1)
+
+### Remove last node
+node(n) --> node(n+1) --> null
+node(n).next --> null
