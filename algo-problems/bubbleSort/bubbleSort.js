@@ -35,24 +35,41 @@
 
 
 
-var bubbleSort = function (array) {
-  // create a for loop that iterates over the length of the array
-  for (var i = 0; i < array.length; i++) {
-    //create a second for loop that iterates over the length of the array
-    for (var j = 0; j < array.length; j++) {
-      //if the current array element > the next array element
-      if (array[j] > array[j + 1]) {
-        //invoke swap function
-        swap(array, j, j + 1);
+// var bubbleSort = function (array) {
+//   // create a for loop that iterates over the length of the array
+//   for (var i = 0; i < array.length; i++) {
+//     //create a second for loop that iterates over the length of the array
+//     for (var j = 0; j < array.length; j++) {
+//       //if the current array element > the next array element
+//       if (array[j] > array[j + 1]) {
+//         //invoke swap function
+//         swap(array, j, j + 1);
+//       }
+//     }
+//   }
+//   return array;
+// }
+
+// var swap = (array, indexA, indexB) => {
+//   var temp = array[indexA];
+
+//   array[indexA] = array[indexB];
+//   array[indexB] = temp;
+// }
+
+function bubbleSort(arr) {
+  for(let x = 0; x < arr.length; x++){
+    for(let y = 0; y < arr.length; y++){
+      if(arr[y] > arr[y+1]){
+        let temp = arr[y];
+        arr[y] = arr[y+1]
+        arr[y+1] = temp
       }
+      console.log(x, y)
     }
   }
-  return array;
+  return arr
 }
 
-var swap = (array, indexA, indexB) => {
-  var temp = array[indexA];
-
-  array[indexA] = array[indexB];
-  array[indexB] = temp;
-}
+console.log(bubbleSort([9, 3, 6, 2, 1, 11])); // [1, 2, 3, 6, 9, 11]
+console.log(bubbleSort([12, 16, 14, 1, 2, 3])); // [1, 2, 3, 12, 14, 16]

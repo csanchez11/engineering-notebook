@@ -15,6 +15,8 @@ const graphMatrix = [
   [1, 9, 5, 8],
   [6, 0, 3, 1],
 ]
+
+const twoDArray = Array.from(Array(rows), () => new Array(cols).fill(0));
 ```
 
 ### Graph List
@@ -108,3 +110,6 @@ node(n-1).next    -->     node(n+1)
 ### Remove last node
 node(n) --> node(n+1) --> null
 node(n).next --> null
+
+### Trick for edge cases near the head
+let dummy = new ListNode(0, head);
