@@ -23,7 +23,7 @@ const twoDArray = Array.from(Array(rows), () => new Array(cols).fill(0));
 A Graph List is also known as an Adjacency List and looks like an Object with keys of each node and the value being an array of adjacent nodes.
 
 ``` JavaScript
-const graphMatrix = {
+const graphList = {
   'Min'     : ['William', 'Jayden', 'Omar'],
   'William' : ['Min', 'Noam'],
   'Jayden'  : ['Min', 'Amelia', 'Ren', 'Noam']
